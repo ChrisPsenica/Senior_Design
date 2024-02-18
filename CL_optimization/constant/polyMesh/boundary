@@ -1,0 +1,54 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+
+7         
+(
+    body
+    {
+        type wall;
+        nFaces 9612;
+        startFace 726397;
+    }
+    farfield_bott
+    {
+        type patch;
+        nFaces 138;
+        startFace 736009;
+    }
+    farfield_in
+    {
+        type patch;
+        nFaces 151;
+        startFace 736147;
+    }
+    farfield_out
+    {
+        type patch;
+        nFaces 151;
+        startFace 736298;
+    }
+    farfield_side
+    {
+        type patch;
+        nFaces 294;
+        startFace 736449;
+    }
+    farfield_top
+    {
+        type patch;
+        nFaces 140;
+        startFace 736743;
+    }
+    sym
+    {
+        type symmetry;
+        nFaces 21126;
+        startFace 736883;
+    }
+)
