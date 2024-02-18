@@ -192,11 +192,11 @@ class Top(Multipoint):
 
         elif args.task == "checkTotals":
             # add the design variables to the dvs component's output
-            self.dvs.add_output("ULS", val=np.array([-0.01 , -0.01 , -0.0088391140147789 , 0.01]))
-            self.dvs.add_output("ULE", val=np.array([0.001 , 0.0005378612443527 , 0.0000126471827505 , 0.001]))
+            self.dvs.add_output("ULS", val=np.array([0]))
+            self.dvs.add_output("ULE", val=np.array([0]))
 
-            self.dvs.add_output("BLS", val=np.array([0.0008444108834448 , 0.01 , 0.01 , 0.01]))
-            self.dvs.add_output("BLE", val=np.array([0.001 , 0.0008453061309204 , 0.000765958419613 , 0.001])) 
+            self.dvs.add_output("BLS", val=np.array([0]))
+            self.dvs.add_output("BLE", val=np.array([0])) 
 
         # manually connect the dvs output to the geometry and cruise
         self.connect("ULS", "geometry.ULS")
@@ -213,7 +213,7 @@ class Top(Multipoint):
         self.add_design_var("BLE", lower = -0.001 , upper = 0.001 , scaler = 1000.0)
 
         # add objective and constraints to the top level
-        self.add_objective("cruise.aero_post.CD", scaler = -1.0)
+        self.add_objective("cruise.aero_post.CD", scaler = 1.0)
         self.add_constraint("cruise.aero_post.CL", lower = CL_baseline , scaler = 1.0)
 
 # =============================================================================
